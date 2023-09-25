@@ -1,4 +1,4 @@
-package com.telusko.quizapp;
+package com.telusko.quizapp.dao;
 
 public class QuestionDao {
 
