@@ -1,5 +1,6 @@
 package com.telusko.quizapp.Controller;
 
+import com.telusko.quizapp.Question;
 import com.telusko.quizapp.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ public class QuestionController {
     QuestionService questionService;
 
     @GetMapping("allQuestions")
-    public String getAllQuestions() {
+    public List<Question> getAllQuestions() {
         return questionService.getAllQuestions();
     }
 }
