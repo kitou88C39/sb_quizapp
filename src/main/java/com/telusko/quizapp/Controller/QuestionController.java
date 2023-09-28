@@ -20,7 +20,7 @@ public class QuestionController {
 
     @GetMapping("allQuestions")
     public List<Question> getAllQuestions() {
-        return questionService.getAllQuestions();
+        return new ResponseEntity<>(questionService.getAllQuestions(), HttpStatus.OK);
     }
 
     @GetMapping("category/{category}")
@@ -28,8 +28,9 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
+    @GetMapping("category/{category}")
     public String addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
-
     }
+
 }
