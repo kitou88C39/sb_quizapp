@@ -28,8 +28,9 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
+    @GetMapping("add")
     public String addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
-
     }
+
 }
