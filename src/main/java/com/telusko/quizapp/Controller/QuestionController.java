@@ -29,6 +29,7 @@ public class QuestionController {
     }
 
     public String addQuestion(@RequestBody Question question) {
-        questionService.addQuestion(question);
+        return questionService.addQuestion(question);
+
     }
 }
