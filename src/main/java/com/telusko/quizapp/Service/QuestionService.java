@@ -3,6 +3,8 @@ package com.telusko.quizapp.Service;
 import com.telusko.quizapp.Question;
 import com.telusko.quizapp.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,8 +12,8 @@ public class QuestionService {
     @Autowired
     QuestionDao questionDao;
 
-    public List<Question> getAllQuestions() {
-        return questionDao.findAll();
+    public ResponseEntity<List<Question>> getAllQuestions() {
+        return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
 
     }
 
