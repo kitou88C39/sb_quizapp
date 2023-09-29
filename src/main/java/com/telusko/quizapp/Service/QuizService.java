@@ -20,5 +20,6 @@ public class QuizService {
         Quiz quiz = new Quiz();
         quiz.setTitle(title);
         quiz.setQuestions();
+        quizDao.save(quiz);
     }
 }
