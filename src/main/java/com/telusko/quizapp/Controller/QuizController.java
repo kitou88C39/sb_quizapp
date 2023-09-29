@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class QuizController {
 
     ＠Autowired
-    QuizService QuizService;
+    QuizService quizService;
 
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ,
             @RequestParam String title) {
-        return quizService;
+        return quizService.createQuiz(category, numQ, title);
     }
 
 }
