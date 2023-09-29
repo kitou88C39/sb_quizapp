@@ -1,4 +1,4 @@
-package com.telusko.quizapp;
+package com.telusko.quizapp.model;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
