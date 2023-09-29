@@ -4,6 +4,7 @@ import com.telusko.quizapp.dao.QuizDao;
 import com.telusko.quizapp.model.Quiz;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,7 @@ public class QuizService {
         quiz.setTitle(title);
         quiz.setQuestions();
         quizDao.save(quiz);
+
+        return new ResponseEntity<>("success", HttpStatus.CREATED);
     }
 }
