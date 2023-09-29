@@ -1,4 +1,4 @@
-package com.telusko.quizapp.Service;
+package com.telusko.quizapp.Controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
