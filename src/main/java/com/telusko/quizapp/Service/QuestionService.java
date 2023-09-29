@@ -13,8 +13,12 @@ public class QuestionService {
     QuestionDao questionDao;
 
     public ResponseEntity<List<Question>> getAllQuestions() {
-        return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
-
+        try {
+            return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
     public List<Question> getQuestionsByCategory(String category) {
