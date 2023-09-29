@@ -25,7 +25,7 @@ public class QuestionController {
     }
 
     @GetMapping("category/{category}")
-    public List<Question> getQuestionByCategory(@PathVariable String category) {
+    public ResponseEntity<List<Question>> getQuestionByCategory(@PathVariable String category) {
         return questionService.getQuestionsByCategory(category);
     }
 
