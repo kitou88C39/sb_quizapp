@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class QuizController {
 
+    QuizService QuizService;
+
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ,
             @RequestParam String title) {
-        return new ResponseEntity<>("I'm here", HttpStatus.OK);
+        return QuizService;
     }
 
 }
