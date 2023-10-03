@@ -2,6 +2,7 @@ package com.telusko.quizapp.Service;
 
 import com.telusko.quizapp.dao.QuestionDao;
 import com.telusko.quizapp.dao.QuizDao;
+import com.telusko.quizapp.model.Question;
 import com.telusko.quizapp.model.QuestionWrapper;
 import com.telusko.quizapp.model.Quiz;
 
@@ -36,7 +37,8 @@ public class QuizService {
         List<Question> questionsFromDB = quiz.get().getQuestions();
         List<QuestionWrapper> questionsFromUser = new ArrayList<>();
         for(Question q: questionsFromDB){
-            QuestionWrapper qw = new QuestionWrapper();
+            QuestionWrapper qw = new QuestionWrapper(q.getId(),q.getQuestionTitle(),q.getOption1(),q.getOption2(),q.getOption3(),q.getOption4());
+            questionsFromUser.add(qw);
         }
 
         return new ResponseEntity<>(questionsForUser,HttpStatus.OK);
