@@ -5,6 +5,8 @@ import com.telusko.quizapp.dao.QuizDao;
 import com.telusko.quizapp.model.QuestionWrapper;
 import com.telusko.quizapp.model.Quiz;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,13 @@ public class QuizService {
     }
 
     public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id){
-        Quiz quiz = quizDao.findById(id);
+        Optional<Quiz> quiz = quizDao.findById(id);
+        List<Question> questionsFromDB = quiz.get().getQuestions();
+        List<QuestionWrapper> questionsFromUser = new ArrayList<>();
+        for(Question q: questionsFromDB){
+            QuestionWrapper qw = new QuestionWrapper();
+        }
+
+        return new ResponseEntity<>(questionsForUser,HttpStatus.OK);
     }
 }
