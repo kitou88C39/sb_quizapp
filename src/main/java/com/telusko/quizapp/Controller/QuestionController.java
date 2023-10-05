@@ -2,7 +2,6 @@ package com.telusko.quizapp.Controller;
 
 import com.telusko.quizapp.Service.QuestionService;
 import com.telusko.quizapp.model.Question;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,5 +33,4 @@ public class QuestionController {
     public String addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
     }
-
 }
