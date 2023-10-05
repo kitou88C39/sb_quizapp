@@ -13,8 +13,7 @@ import java.util.List;
 @RequestMapping
 public class QuizController {
 
-    ＠
-    Autowired QuizService quizService;
+    ＠Autowired QuizService quizService;
 
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ,
